@@ -1,0 +1,16 @@
+[
+  {
+    "key": "firstName",
+    "type": "input",
+    "templateOptions": {
+      "label": "First Name"
+    }
+  },
+  {
+    "key": "lastName",
+    "type": "input",
+    "templateOptions": {
+      "label": "Last Name"
+    }
+  }
+]
