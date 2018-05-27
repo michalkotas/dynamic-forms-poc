@@ -26,6 +26,26 @@
           { "value": "3", "label": "Ukraine" }
         ]
       }
+    },
+    {
+      "key": "city",
+      "type": "select",
+      "templateOptions": {
+        "label": "City",
+        "dependsOnField": "country",
+        "placeholder": "Select City",
+        "options": [
+          { "value": "1", "label": "Warsaw" , "parentValue": "1"},
+          { "value": "2", "label": "Gdansk", "parentValue": "1"},
+          { "value": "3", "label": "Poznan", "parentValue": "1"},
+          { "value": "4", "label": "Berlin", "parentValue": "2"},
+          { "value": "5", "label": "Hamburg", "parentValue": "2"},
+          { "value": "6", "label": "Bonn", "parentValue": "2"},
+          { "value": "7", "label": "Kiev", "parentValue": "3"},
+          { "value": "8", "label": "Kharkov", "parentValue": "3"},
+          { "value": "9", "label": "Odessa", "parentValue": "3"}
+        ]
+      }
     }
   ],
   "car": []
