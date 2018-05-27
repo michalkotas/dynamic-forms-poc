@@ -14,10 +14,16 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
-  getSchema(): Observable<FormlyFieldConfig[]> {
+  getUserSchema(): Observable<FormlyFieldConfig[]> {
     return this.http
       .get<{[fieldName: string]: FormlyFieldConfig[]}>(DATA)
-      .pipe(map(resp => resp.user), catchError(this.handleError('getHeroes', [])));
+      .pipe(map(resp => resp.user), catchError(this.handleError('getUserSchema', [])));
+  }
+
+  getCarSchema(): Observable<FormlyFieldConfig[]> {
+    return this.http
+      .get<{[fieldName: string]: FormlyFieldConfig[]}>(DATA)
+      .pipe(map(resp => resp.car), catchError(this.handleError('getCarSchema', [])));
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

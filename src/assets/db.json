@@ -54,5 +54,52 @@
       }
     }
   ],
-  "car": []
+  "car": [
+    {
+      "key": "vin",
+      "type": "input",
+      "templateOptions": {
+        "label": "VIN Code"
+      }
+    },
+    {
+      "key": "make",
+      "type": "select",
+      "templateOptions": {
+        "label": "Make",
+        "placeholder": "Select Make",
+        "showClear": true,
+        "dropdownIcon": "fa fas fa-car",
+        "options": [
+          { "value": "1", "label": "Ford" },
+          { "value": "2", "label": "Volkswagen" },
+          { "value": "3", "label": "Fiat" }
+        ]
+      }
+    },
+    {
+      "key": "model",
+      "type": "select",
+      "templateOptions": {
+        "label": "Model",
+        "dependsOnField": "make",
+        "placeholder": "Select Model",
+        "options": [
+          { "value": "1", "label": "Focus" , "parentValue": "1"},
+          { "value": "2", "label": "Mondeo", "parentValue": "1"},
+          { "value": "3", "label": "Fiesta", "parentValue": "1"},
+          { "value": "4", "label": "Golf", "parentValue": "2"},
+          { "value": "5", "label": "Jetta", "parentValue": "2"},
+          { "value": "6", "label": "Passat", "parentValue": "2"},
+          { "value": "7", "label": "Cinquecento", "parentValue": "3"},
+          { "value": "8", "label": "Multipla", "parentValue": "3"},
+          { "value": "9", "label": "Panda", "parentValue": "3"}
+        ]
+      },
+      "expressionProperties": {
+        "templateOptions.disabled": "!model.make",
+        "templateOptions.options": "console.log('expressionProperties for options', this)"
+      }
+    }
+  ]
 }

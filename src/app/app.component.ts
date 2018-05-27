@@ -14,18 +14,32 @@ export class AppComponent implements OnInit {
   userModel = {};
   userFields: FormlyFieldConfig[];
 
+  carForm = new FormGroup({});
+  carModel = {};
+  carFields: FormlyFieldConfig[];
+
   constructor(private apiService: ApiService) {
   }
 
   ngOnInit() {
-    this.apiService.getSchema().subscribe((schema) => {
+    this.apiService.getUserSchema().subscribe((schema) => {
       this.userFields = schema;
+    });
+
+    this.apiService.getCarSchema().subscribe((schema) => {
+      this.carFields = schema;
     });
   }
 
   userSubmit() {
     if (this.userForm.valid) {
       alert(JSON.stringify(this.userModel));
+    }
+  }
+
+  carSubmit() {
+    if (this.carForm.valid) {
+      alert(JSON.stringify(this.carModel));
     }
   }
 }
