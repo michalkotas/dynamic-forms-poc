@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { FormlyFieldConfig } from '@ngx-formly/core/lib/components/formly.field.config';
 
 const DATA = './assets/db.json';
 
@@ -13,9 +14,9 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
-  getSchema(): Observable<any> {
+  getSchema(): Observable<FormlyFieldConfig[]> {
     return this.http
-      .get<any>(DATA)
+      .get<{[fieldName: string]: FormlyFieldConfig[]}>(DATA)
       .pipe(map(resp => resp.user), catchError(this.handleError('getHeroes', [])));
   }
 

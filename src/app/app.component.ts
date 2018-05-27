@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.getSchema().subscribe((schema) => {
-      this.fields = schema as FormlyFieldConfig[];
+      this.fields = schema;
     });
   }
 }
