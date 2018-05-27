@@ -18,7 +18,13 @@
       "key": "country",
       "type": "select",
       "templateOptions": {
-        "label": "Country"
+        "label": "Country",
+        "placeholder": "Select Country",
+        "options": [
+          { "value": "1", "label": "Poland" },
+          { "value": "2", "label": "Germany" },
+          { "value": "3", "label": "Ukraine" }
+        ]
       }
     }
   ],

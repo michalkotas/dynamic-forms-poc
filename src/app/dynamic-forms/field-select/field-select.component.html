@@ -1,8 +1,1 @@
-<label>{{field.templateOptions.label}}
-  <select [formControl]="formControl" [formlyAttributes]="field">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
-  </select>
-</label>
+<p-dropdown [options]="selectOptions" [formControl]="formControl" [formlyAttributes]="field" [placeholder]="field.templateOptions.placeholder"></p-dropdown>
