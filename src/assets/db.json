@@ -10,6 +10,7 @@
     {
       "key": "lastName",
       "type": "input",
+      "hide": false,
       "templateOptions": {
         "label": "Last Name"
       }
@@ -20,6 +21,8 @@
       "templateOptions": {
         "label": "Country",
         "placeholder": "Select Country",
+        "showClear": true,
+        "dropdownIcon": "fa fas fa-globe",
         "options": [
           { "value": "1", "label": "Poland" },
           { "value": "2", "label": "Germany" },
@@ -45,6 +48,9 @@
           { "value": "8", "label": "Kharkov", "parentValue": "3"},
           { "value": "9", "label": "Odessa", "parentValue": "3"}
         ]
+      },
+      "expressionProperties": {
+        "templateOptions.disabled": "!model.country"
       }
     }
   ],

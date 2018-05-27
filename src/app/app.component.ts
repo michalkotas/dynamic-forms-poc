@@ -10,16 +10,22 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  form = new FormGroup({});
-  model;
-  fields: FormlyFieldConfig[];
+  userForm = new FormGroup({});
+  userModel = {};
+  userFields: FormlyFieldConfig[];
 
   constructor(private apiService: ApiService) {
   }
 
   ngOnInit() {
     this.apiService.getSchema().subscribe((schema) => {
-      this.fields = schema;
+      this.userFields = schema;
     });
+  }
+
+  userSubmit() {
+    if (this.userForm.valid) {
+      alert(JSON.stringify(this.userModel));
+    }
   }
 }

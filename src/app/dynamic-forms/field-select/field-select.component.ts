@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FieldType } from '@ngx-formly/core';
+import { FieldType, FormlyTemplateOptions } from '@ngx-formly/core';
 import { SelectItem } from 'primeng/api';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
@@ -11,12 +11,16 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class FieldSelectComponent extends FieldType implements OnInit {
   selectOptions: SelectItem[] = [];
-
+  templateOptions: FormlyTemplateOptions;
+  showClear: boolean;
+  dropdownIcon: string;
   constructor() {
     super();
   }
 
   ngOnInit() {
+    this.showClear = this.field.templateOptions.showClear;
+    this.dropdownIcon = this.field.templateOptions.dropdownIcon ? this.field.templateOptions.dropdownIcon : 'fa fa-fw fa-caret-down';
     if (this.field.templateOptions.dependsOnField) {
       const parentFormControl: FormControl = this.form.controls[this.field.templateOptions.dependsOnField] as FormControl;
       if (parentFormControl) {
