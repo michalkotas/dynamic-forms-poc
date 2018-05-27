@@ -1,16 +1,26 @@
-[
-  {
-    "key": "firstName",
-    "type": "input",
-    "templateOptions": {
-      "label": "First Name"
+{
+  "user": [
+    {
+      "key": "firstName",
+      "type": "input",
+      "templateOptions": {
+        "label": "First Name"
+      }
+    },
+    {
+      "key": "lastName",
+      "type": "input",
+      "templateOptions": {
+        "label": "Last Name"
+      }
+    },
+    {
+      "key": "country",
+      "type": "select",
+      "templateOptions": {
+        "label": "Country"
+      }
     }
-  },
-  {
-    "key": "lastName",
-    "type": "input",
-    "templateOptions": {
-      "label": "Last Name"
-    }
-  }
-]
+  ],
+  "car": []
+}

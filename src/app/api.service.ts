@@ -15,8 +15,8 @@ export class ApiService {
 
   getSchema(): Observable<any> {
     return this.http
-      .get(DATA)
-      .pipe(map(resp => resp), catchError(this.handleError('getHeroes', [])));
+      .get<any>(DATA)
+      .pipe(map(resp => resp.user), catchError(this.handleError('getHeroes', [])));
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
